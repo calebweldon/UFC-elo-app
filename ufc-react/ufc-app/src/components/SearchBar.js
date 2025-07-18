@@ -6,6 +6,7 @@ const SearchBar = () => {
     const [allNames, setAllNames] = useState([]);
     const [query, setQuery] = useState("");
     const [filtered, setFiltered] = useState([]);
+    const [isValid, setIsValid] = useState(true);
   
     const getAllNames = async () => {
         try {
@@ -31,28 +32,47 @@ const SearchBar = () => {
     const navigate = useNavigate();
 
     const handleKeyDown = (e) => {
-        if (e.key === "Enter" && query.trim()) {
-          navigate(`/fighter/${encodeURIComponent(query.trim())}`);
+        if (e.key === "Enter") {
+          const match = allNames.find(
+            (name) => name.toLowerCase() === query.trim().toLowerCase()
+          );
+      
+          if (match) {
+            setIsValid(true);
+            navigate(`/fighter/${encodeURIComponent(match)}`);
+          } else {
+            setIsValid(false);
+          }
         }
-    };
+      };
     
     return (
         <div style={{ position: "relative", maxWidth: "400px", margin: "2rem auto" }}>
           <input
             type="text"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+                setQuery(e.target.value)
+                setIsValid(true)
+            }}
             onKeyDown={handleKeyDown}
             placeholder="Search fighters..."
             style={{
-              width: "100%",
-              padding: "0.5rem",
-              fontSize: "1rem",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
+                width: "100%",
+                padding: "0.5rem",
+                fontSize: "1rem",
+                border: isValid ? "1px solid #ccc" : "1px solid red",
+                borderRadius: "4px",
+                boxShadow: !isValid ? "0 0 0 2px rgba(255, 0, 0, 0.3)" : "none", 
             }}
           />
     
+            {!isValid && (
+                <p style={{ color: "red", marginTop: "0.25rem", fontSize: "0.9rem" }}>
+                    Not a valid fighter name
+                </p>
+            )}
+
           {query && filtered.length > 0 && (
             <ul
               style={{
