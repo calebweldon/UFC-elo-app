@@ -1,0 +1,35 @@
+# --- Node/React ---
+/ufc-react/ufc-app/node_modules/
+/ufc-react/ufc-app/build/
+/ufc-react/ufc-app/.DS_Store
+/ufc-react/ufc-app/.env
+
+# --- Java/Spring Boot ---
+/ufc-springboot/target/
+/ufc-springboot/.idea/
+/ufc-springboot/.classpath
+/ufc-springboot/.project
+/ufc-springboot/.settings/
+/ufc-springboot/.vscode/
+*.iml
+*.log
+
+# Maven
+/ufc-springboot/.mvn/wrapper/maven-wrapper.jar
+
+# --- PostgreSQL Data ---
+/ufc-springboot/pgdata/
+
+# --- OS-specific ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+
+# --- IDE-specific ---
+.idea/
+*.iml
+
+# --- Docker ---
+.env
