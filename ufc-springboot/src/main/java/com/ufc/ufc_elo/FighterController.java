@@ -22,8 +22,13 @@ public class FighterController {
         return fighterService.getAllFighters();
     }
 
-    @GetMapping("api/fighters/{id}")
-    public Fighter findFighterById(@PathVariable Integer id) {
-        return fighterService.findFighterById(id);
+    @GetMapping("/api/fighters/names")
+    public List<String> getAllFighterNames() {
+        return fighterService.getAllFighterNames();
+    }
+
+    @GetMapping("api/fighter/{name}")
+    public Fighter findFighterByNameIgnoreCase(@PathVariable String name) {
+        return fighterService.findFighterByNameIgnoreCase(name.trim());
     }
 }

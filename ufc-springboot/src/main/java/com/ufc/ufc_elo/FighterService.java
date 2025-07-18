@@ -19,8 +19,15 @@ public class FighterService {
         return fighterRepository.findAll();
     }
 
-    public Fighter findFighterById(Integer id) {
-        return fighterRepository.findFighterById(id);
+    public List<String> getAllFighterNames() {
+        return fighterRepository.findAll()
+                .stream()
+                .map(Fighter::getName)
+                .toList();
+    }
+
+    public Fighter findFighterByNameIgnoreCase(String name) {
+        return fighterRepository.findFighterByNameIgnoreCase(name);
     }
 
 }

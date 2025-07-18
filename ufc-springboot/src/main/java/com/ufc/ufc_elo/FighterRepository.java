@@ -9,5 +9,5 @@ public interface FighterRepository extends JpaRepository<Fighter, Integer> {
 
 //    List<Fighter> findById();
 
-    Fighter findFighterById(Integer id);
+    Fighter findFighterByNameIgnoreCase(String name);
 }

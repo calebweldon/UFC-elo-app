@@ -1,33 +1,19 @@
 import './App.css';
-import api from './api/axiosConfig';
-import {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SearchBar from "./components/SearchBar";
+import FighterPage from "./components/FighterPage";
 
 function App() {
 
-  const [fighters, setFighters] = useState();
-
-  const getFighters = async () =>{
-
-    try {
-      const response = await api.get("api/fighters");
-
-      console.log(response.data);
-      setFighters(response.data);
-
-    } catch(err) {
-      console.log(err);
-    }
-  }
-
-  useEffect(() => {
-    getFighters();
-  },[])
-
   return (
-    <div className="App">
-
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<SearchBar />} />
+        <Route path="/fighter/:name" element={<FighterPage />} />
+      </Routes>
+    </Router>
   );
+  
 }
 
 export default App;
