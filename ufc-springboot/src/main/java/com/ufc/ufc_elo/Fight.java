@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Entity
 @Table(name="fights")
 @NoArgsConstructor
@@ -16,64 +14,65 @@ public class Fight {
 	@Column(name = "ff_id")
 	private Integer id;
 
-	@Column(name = "event_id")
-	private Integer eventId;
+	@ManyToOne
+	@JoinColumn(name = "event_id", referencedColumnName = "event_id")
+	private Event event;
 
-	@Column(name = "fighter_id")
-	private Integer fighterId;
+	@ManyToOne
+	@JoinColumn(name = "fighter_id", referencedColumnName = "fighter_id")
+	private Fighter fighter;
 
-	@Column(name = "opponent_id")
-	private Integer opponentId;
+	@ManyToOne
+	@JoinColumn(name = "opponent_id", referencedColumnName = "fighter_id")
+	private Fighter opponent;
 
 	private String result;
 
 	@Column(name = "fighter_pre_elo")
-	private BigDecimal fighterPreElo;
+	private Float fighterPreElo;
 
 	@Column(name = "fighter_post_elo")
-	private BigDecimal fighterPostElo;
+	private Float fighterPostElo;
 
 	@Column(name = "opponent_elo")
-	private BigDecimal opponentElo;
+	private Float opponentElo;
 
 	@Column(name = "weight_class")
 	private String weightClass;
 
 	private String method;
-
 	private Integer round;
-
 	private String time;
 
 	public Integer getId() {
 		return id;
 	}
 
-	public Integer getEventId() {
-		return eventId;
+	public Event getEvent() {
+		return event;
 	}
 
-	public Integer getFighterId() {
-		return fighterId;
+	public Fighter getFighter() {
+		return fighter;
 	}
 
-	public Integer getOpponentId() {
-		return opponentId;
+	public Fighter getOpponent() {
+		return opponent;
 	}
 
 	public String getResult() {
 		return result;
 	}
 
-	public BigDecimal getFighterPreElo() {
+	public Float getFighterPreElo() {
 		return fighterPreElo;
 	}
 
-	public BigDecimal getFighterPostElo() {
+	public Float getFighterPostElo() {
 		return fighterPostElo;
 	}
 
-	public BigDecimal getOpponentElo() {
+	public Float getOpponentElo() {
 		return opponentElo;
 	}
 

@@ -3,6 +3,8 @@ package com.ufc.ufc_elo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class FightService {
 
@@ -11,5 +13,9 @@ public class FightService {
 	@Autowired
 	public FightService(FightRepository fightRepository) {
 		this.fightRepository = fightRepository;
+	}
+
+	public List<FightDetailsDTO> findFightsByFighterName(String name) {
+		return fightRepository.findFightsByFighterName(name.trim());
 	}
 }
