@@ -5,7 +5,6 @@ import java.time.LocalDate;
 public class FightDetailsDTO {
 	private String opponentName;
 	private String event;
-	private String location;
 	private LocalDate date;
 	private String result;
 	private Float fighterPreElo;
@@ -19,7 +18,6 @@ public class FightDetailsDTO {
 	public FightDetailsDTO(
 			String opponentName,
 			String event,
-			String location,
 			LocalDate date,
 			String result,
 			Float fighterPreElo,
@@ -32,7 +30,6 @@ public class FightDetailsDTO {
 	) {
 		this.opponentName = opponentName;
 		this.event = event;
-		this.location = location;
 		this.date = date;
 		this.result = result;
 		this.fighterPreElo = fighterPreElo;
@@ -50,10 +47,6 @@ public class FightDetailsDTO {
 
 	public String getEvent() {
 		return event;
-	}
-
-	public String getLocation() {
-		return location;
 	}
 
 	public LocalDate getDate() {

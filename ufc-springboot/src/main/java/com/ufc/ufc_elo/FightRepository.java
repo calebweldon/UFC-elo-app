@@ -14,7 +14,6 @@ public interface FightRepository extends JpaRepository<Fight, Integer> {
 		SELECT new com.ufc.ufc_elo.FightDetailsDTO(
 			f.opponent.name,
 			f.event.event,
-			f.event.location,
 			f.event.date,
 			f.result,
 			f.fighterPreElo,
