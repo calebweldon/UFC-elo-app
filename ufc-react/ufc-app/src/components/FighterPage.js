@@ -1,5 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import {
+  LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
+} from 'recharts';
 import api from "../api/axiosConfig";
 import FightCard from "./FightCard";
 import "../styles/FighterPage.css";
@@ -8,6 +11,7 @@ const FighterPage = () => {
     const { name } = useParams();
     const [fighter, setFighter] = useState(null);
     const [fights, setFights] = useState(null);
+    let eloHistory = [];
   
     const fetchFighter = async () => {
       try {
@@ -31,6 +35,24 @@ const FighterPage = () => {
       fetchFighter();
       fetchFights();
     }, [name]);
+
+    if (fights) {
+      const sortedFights = fights
+        .slice()
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+    
+      const firstFightDate = new Date(sortedFights[0].date);
+      const oneDayBefore = new Date(firstFightDate);
+      oneDayBefore.setDate(oneDayBefore.getDate() - 1);
+    
+      eloHistory = [
+        { date: oneDayBefore.toLocaleDateString(), elo: 1000 },
+        ...sortedFights.map(f => ({
+          date: new Date(f.date).toLocaleDateString(),
+          elo: f.fighterPostElo,
+        })),
+      ];
+    }
   
     if (!fighter) return <p style={{ textAlign: "center", marginTop: "2rem" }}>Loading...</p>;
   
@@ -46,6 +68,21 @@ const FighterPage = () => {
           <p><strong>Draws:</strong> {fighter.draws}</p>
           <p><strong>No Contests:</strong> {fighter.ncs}</p>
     
+          {eloHistory.length > 0 && (
+            <div className="elo-chart-container">
+              <h2>ELO Over Time</h2>
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={eloHistory}>
+                  <CartesianGrid stroke="#ccc" />
+                  <XAxis dataKey="date" />
+                  <YAxis domain={['auto', 'auto']} />
+                  <Tooltip />
+                  <Line type="monotone" dataKey="elo" stroke="#82ca9d" strokeWidth={2} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          )}
+
           {fights && (
             <div className="fight-section">
               <h2>Fight History</h2>

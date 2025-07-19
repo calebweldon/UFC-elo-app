@@ -44,3 +44,10 @@
     padding: 0;
     margin: 0;
   }
+
+  .elo-chart-container {
+    margin-top: 2rem;
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 8px;
+  }
