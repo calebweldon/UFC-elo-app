@@ -1,0 +1,12 @@
+.home-page {
+    background-color: #1e1e1e;
+    min-height: 100vh;
+    padding: 2rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  .home-page h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }

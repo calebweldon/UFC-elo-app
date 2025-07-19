@@ -1,6 +1,8 @@
 package com.ufc.ufc_elo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -30,4 +32,7 @@ public class FighterService {
         return fighterRepository.findFighterByNameIgnoreCase(name);
     }
 
+    public Page<Fighter> findAll(Pageable pageable) {
+        return fighterRepository.findAll(pageable);
+    }
 }

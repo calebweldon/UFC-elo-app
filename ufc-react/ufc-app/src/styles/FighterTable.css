@@ -1,0 +1,70 @@
+.fighter-table-container {
+    margin-top: 2rem;
+    background-color: #1f1f1f;
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .fighter-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .fighter-table th,
+  .fighter-table td {
+    border: 1px solid #444;
+    padding: 0.75rem;
+    text-align: center;
+  }
+  
+  .fighter-table th {
+    background-color: #333;
+  }
+  
+  .fighter-table tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+  }
+  
+  .pagination {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .pagination button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .elo-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .elo-toggle button {
+    padding: 0.4rem 1rem;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .elo-toggle button.active {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+  }
