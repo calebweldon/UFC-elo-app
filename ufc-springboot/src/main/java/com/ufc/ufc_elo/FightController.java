@@ -18,7 +18,7 @@ public class FightController {
 	}
 
 	@GetMapping("api/fights/{name}")
-	public List<FightDetailsDTO> findFightsByFighterName(@PathVariable String name) {
-		return fightService.findFightsByFighterName(name);
+	public List<FightDetailsDTO> findFightsByFighterNameIgnoreCase(@PathVariable String name) {
+		return fightService.findFightsByFighterNameIgnoreCase(name);
 	}
 }

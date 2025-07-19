@@ -30,6 +30,6 @@ public interface FightRepository extends JpaRepository<Fight, Integer> {
 			SELECT fi.id FROM Fighter fi WHERE LOWER(fi.name) = LOWER(:name)
 		)
 	""")
-	List<FightDetailsDTO> findFightsByFighterName(@Param("name") String name);
+	List<FightDetailsDTO> findFightsByFighterNameIgnoreCase(@Param("name") String name);
 
 }

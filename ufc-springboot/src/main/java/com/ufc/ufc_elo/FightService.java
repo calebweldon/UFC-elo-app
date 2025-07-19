@@ -15,7 +15,7 @@ public class FightService {
 		this.fightRepository = fightRepository;
 	}
 
-	public List<FightDetailsDTO> findFightsByFighterName(String name) {
-		return fightRepository.findFightsByFighterName(name.trim());
+	public List<FightDetailsDTO> findFightsByFighterNameIgnoreCase(String name) {
+		return fightRepository.findFightsByFighterNameIgnoreCase(name.trim());
 	}
 }
