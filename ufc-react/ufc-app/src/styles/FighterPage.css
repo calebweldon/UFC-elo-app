@@ -1,12 +1,7 @@
-.fighter-page-container {
+  .fighter-content {
     background-color: #1e1e1e;
     min-height: 100vh;
-    padding: 2rem;
-  }
-  
-  .fighter-content {
-    max-width: 1000px;
-    margin: 0 auto;
+    padding: 8rem;
     color: #fff;
   }
 

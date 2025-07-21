@@ -99,7 +99,6 @@ const FighterPage = () => {
     if (!fighter) return <p style={{ textAlign: "center", marginTop: "2rem" }}>Loading...</p>;
   
     return (
-      <div className="fighter-page-container">
         <div className="fighter-content">
           <div className="fighter-card">
             <div className ="fighter-name-record">
@@ -140,7 +139,6 @@ const FighterPage = () => {
 
           {fights && <FightHistory fights={fights} />}
         </div>
-      </div>
     );
   };
   

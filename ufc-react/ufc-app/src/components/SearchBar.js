@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from '../api/axiosConfig';
 import "../styles/SearchBar.css";
+import DropdownList from "./DropdownList";
 
 const SearchBar = () => {
     const [allNames, setAllNames] = useState([]);
@@ -76,14 +77,8 @@ const SearchBar = () => {
         {!isValid && <p className="error-message">Not a valid fighter name</p>}
   
         {query && filtered.length > 0 && (
-          <ul className="dropdown-list">
-            {filtered.map((name, index) => (
-              <li key={index} onMouseDown={() => setQuery(name)}>
-                {name}
-              </li>
-            ))}
-          </ul>
-        )}
+        <DropdownList filtered={filtered} onSelect={setQuery} />
+      )}
       </div>
     );
   };

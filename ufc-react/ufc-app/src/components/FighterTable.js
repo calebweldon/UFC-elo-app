@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import api from "../api/axiosConfig";
 import "../styles/FighterTable.css";
+import EloToggle from "./EloToggle";
+import Pagination from "./Pagination";
+
 
 const FighterTable = () => {
   const [fighters, setFighters] = useState([]);
@@ -32,20 +35,7 @@ const FighterTable = () => {
     
     <div className="fighter-table-container">
 
-    <div className="elo-toggle">
-        <button
-            className={eloView === "currentElo" ? "active" : ""}
-            onClick={() => setEloView("currentElo")}
-        >
-        Current Elo
-        </button>
-        <button
-            className={eloView === "peakElo" ? "active" : ""}
-            onClick={() => setEloView("peakElo")}
-        >
-        Peak Elo
-        </button>
-    </div>
+      <EloToggle eloView={eloView} setEloView={setEloView} />
       
       <table className="fighter-table">
         <thead>
@@ -72,11 +62,7 @@ const FighterTable = () => {
       </tbody>
       </table>
 
-      <div className="pagination">
-        <button disabled={page === 0} onClick={() => setPage(page - 1)}>Previous</button>
-        <span>Page {page + 1} of {totalPages}</span>
-        <button disabled={page + 1 === totalPages} onClick={() => setPage(page + 1)}>Next</button>
-      </div>
+      <Pagination page={page} totalPages={totalPages} setPage={setPage} />
     </div>
   );
 };
