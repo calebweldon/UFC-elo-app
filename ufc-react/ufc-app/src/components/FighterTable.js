@@ -60,12 +60,16 @@ const FighterTable = () => {
           {fighters.map((fighter, index) => (
             <tr key={fighter.id}>
               <td>{page * 20 + index + 1}</td>
-              <td>{fighter.name}</td>
+              <td>
+                <a href={`/fighter/${encodeURIComponent(fighter.name)}`} className="fighter-link">
+                  {fighter.name}
+                </a>
+              </td>
               <td>{eloView === "currentElo" ? fighter.currentElo : fighter.peakElo}</td>
               <td>{fighter.wins}-{fighter.losses}-{fighter.draws} ({fighter.ncs} NC)</td>
             </tr>
           ))}
-        </tbody>
+      </tbody>
       </table>
 
       <div className="pagination">
