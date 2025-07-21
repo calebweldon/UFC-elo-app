@@ -1,18 +1,22 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {
-  LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
-} from 'recharts';
 import api from "../api/axiosConfig";
 import FightCard from "./FightCard";
+import EloChart from "./EloChart";
+import FightHistory from "./FightHistory";
 import "../styles/FighterPage.css";
 
 const FighterPage = () => {
     const { name } = useParams();
     const [fighter, setFighter] = useState(null);
     const [fights, setFights] = useState(null);
+    const lastFight = fights?.length > 0 ? fights[fights.length - 1] : null;
+    const eloChange = lastFight
+      ? (lastFight.fighterPostElo - lastFight.fighterPreElo).toFixed(2)
+      : null;
     let eloHistory = [];
   
+    
     const fetchFighter = async () => {
       try {
         const response = await api.get(`/api/fighter/${encodeURIComponent(name)}`);
@@ -53,56 +57,88 @@ const FighterPage = () => {
         })),
       ];
     }
+
+    const renderEloArrow = () => {
+      if (!lastFight) return null;
+    
+      switch (lastFight.result) {
+        case "win":
+          return <span className="elo-arrow up">▲</span>;
+        case "loss":
+          return <span className="elo-arrow down">▼</span>;
+        case "draw":
+        case "nc":
+        case "no contest":
+          return <span className="elo-arrow neutral">−</span>;
+        default:
+          return null;
+      }
+    };
+
+    const renderEloChange = () => {
+      if (!lastFight || eloChange === null) return null;
+    
+      let symbol, cls;
+    
+      if (lastFight.result === "win") {
+        symbol = "+";
+        cls = "elo-change up";
+      } else if (lastFight.result === "loss") {
+        symbol = "";
+        cls = "elo-change down";
+      } else {
+        // draw or nc
+        symbol = ""
+        cls = "elo-change neutral";
+        return <span className={cls}>({symbol})</span>;
+      }
+    
+      return <span className={cls}>( {symbol}{eloChange} )</span>;
+    };
   
     if (!fighter) return <p style={{ textAlign: "center", marginTop: "2rem" }}>Loading...</p>;
   
     return (
       <div className="fighter-page-container">
         <div className="fighter-content">
-          <h1>{fighter.name}</h1>
-    
-          <p><strong>Current Elo:</strong> {fighter.currentElo}</p>
-          <p><strong>Peak Elo:</strong> {fighter.peakElo}</p>
-          <p><strong>Wins:</strong> {fighter.wins}</p>
-          <p><strong>Losses:</strong> {fighter.losses}</p>
-          <p><strong>Draws:</strong> {fighter.draws}</p>
-          <p><strong>No Contests:</strong> {fighter.ncs}</p>
-    
-          {eloHistory.length > 0 && (
-            <div className="elo-chart-container">
-              <h2>ELO Over Time</h2>
-              <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={eloHistory}>
-                  <CartesianGrid stroke="#ccc" />
-                  <XAxis dataKey="date" />
-                  <YAxis domain={['auto', 'auto']} />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="elo" stroke="#82ca9d" strokeWidth={2} />
-                </LineChart>
-              </ResponsiveContainer>
+          <div className="fighter-card">
+            <div className ="fighter-name-record">
+              <h1>{fighter.name}</h1>
+              <p>{fighter.wins} - {fighter.losses} - {fighter.draws} ({fighter.ncs} NC)</p>
             </div>
-          )}
-
-          {fights && (
-            <div className="fight-section">
-              <h2>Fight History</h2>
-    
-              <div className="fight-card-key">
-                <div className="fight-card-item">Result</div>
-                <div className="fight-card-item">Elo (+/-)</div>
-                <div className="fight-card-item">Opponent</div>
-                <div className="fight-card-item">Opponent Elo</div>
+            <div className="fighter-elo">
+            <div className="fighter-elo-card">
+            <h3 className={`elo-heading ${lastFight?.result === "win" ? "win" : ""}`}>
+              Current Elo
+            </h3>
+              <div className="elo-number-wrapper">
+                <div className="elo-value-line">
+                  <p>{fighter.currentElo}</p>
+                </div>
+                <div className="elo-arrow-group">
+                  {renderEloArrow()}
+                  {renderEloChange()}
+                </div>
               </div>
-    
-              <ul className="fight-list">
-                {fights.map((fight, index) => (
-                  <li key={index}>
-                    <FightCard fight={fight} />
-                  </li>
-                ))}
-              </ul>
             </div>
-          )}
+
+            <div className="fighter-elo-card">
+            <h3 className={`elo-heading ${lastFight?.result === "win" ? "win" : ""}`}>
+              Peak Elo
+            </h3>
+              <div className="elo-number-wrapper">
+                <div className="elo-value-line">
+                  <p>{fighter.peakElo}</p>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <EloChart eloHistory={eloHistory} eloChange={eloChange} />
+          </div>
+
+
+          {fights && <FightHistory fights={fights} />}
         </div>
       </div>
     );

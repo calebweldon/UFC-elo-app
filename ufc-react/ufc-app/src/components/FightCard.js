@@ -17,8 +17,20 @@ const FightCard = ({ fight }) => {
         </div>
   
         <div className="fight-row">
-          <div className={`fight-result ${resultClass}`}>{fight.result}</div>
-          <div className="fighter-elo">{fight.fighterPostElo} ({formattedDiff})</div>
+        <div className={`fight-result ${resultClass}`}>
+            {fight.result === "win"
+              ? "W"
+              : fight.result === "loss"
+              ? "L"
+              : fight.result === "draw"
+              ? "D"
+              : "NC"}
+          </div>
+          <div className="fighter-elo">
+            <span className={`elo-text ${resultClass}`}>
+              {fight.fighterPostElo} ({formattedDiff})
+            </span>
+          </div>
           <div className="opponent-name">{fight.opponentName}</div>
           <div className="opponent-elo">{fight.opponentElo}</div>
         </div>

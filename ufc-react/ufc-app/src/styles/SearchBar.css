@@ -18,7 +18,7 @@
     border-right: none;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    background-color: #2b2b2b;
+    background-color: #1e1e1e;
   }
 
   .search-input:focus {
@@ -38,7 +38,7 @@
     border: 1.5px solid #ccc;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    background-color: #2b2b2b;
+    background-color: #1e1e1e;
     cursor: pointer;
   }
   
@@ -62,7 +62,7 @@
     position: absolute;
     width: 100%;
     color: #ccc;
-    background-color: #2b2b2b;
+    background-color: #1e1e1e;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
