@@ -1,10 +1,10 @@
-#spring:
-#  datasource:
-#    url: jdbc:postgresql://${DB_HOST:your-endpoint}:5432/ufcdb
-#    username: ${DB_USER:readonly_user}
-#    password: ${DB_PASSWORD}
-#    driver-class-name: org.postgresql.Driver
-#  jpa:
-#    hibernate:
-#      ddl-auto: none
-#    show-sql: true
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${PORT}/ufcelo
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
