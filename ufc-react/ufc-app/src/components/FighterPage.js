@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../api/axiosConfig";
-import FightCard from "./FightCard";
 import EloChart from "./EloChart";
 import FightHistory from "./FightHistory";
+import Header from "./Header";
 import "../styles/FighterPage.css";
 
 const FighterPage = () => {
@@ -99,6 +99,8 @@ const FighterPage = () => {
     if (!fighter) return <p style={{ textAlign: "center", marginTop: "2rem" }}>Loading...</p>;
   
     return (
+      <div>
+        <Header />
         <div className="fighter-content">
           <div className="fighter-card">
             <div className ="fighter-name-record">
@@ -139,6 +141,7 @@ const FighterPage = () => {
 
           {fights && <FightHistory fights={fights} />}
         </div>
+      </div>
     );
   };
   
