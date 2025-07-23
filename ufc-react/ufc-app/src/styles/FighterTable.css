@@ -13,6 +13,7 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
+    font-size: clamp(0.8rem, 4vw, 1.1rem)
   }
   
   .fighter-table th,
@@ -41,10 +42,6 @@
   }
 
   @media (max-width: 410px) {
-  
-    .fighter-table {
-      font-size: 0.8rem;
-    }
 
     .fighter-table-container {
       padding: 1rem 0rem 1rem 0rem

@@ -1,7 +1,7 @@
   .fighter-content {
     background-color: #1e1e1e;
     min-height: 100vh;
-    padding: 8rem;
+    padding: 8rem 2rem 8rem 2rem;
     color: #fff;
   }
 
@@ -13,6 +13,9 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    min-width: 100px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .fighter-name-record {
@@ -23,7 +26,7 @@
   }
   
   .fighter-name-record h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     margin: 0.5rem 0rem 0.0rem 0rem;
     color: #fff;
   }
@@ -35,7 +38,7 @@
 
   .fighter-elo {
     display: flex;
-    flex-wrap: wrap; /* allow cards to wrap if needed */
+    flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
     gap: 2rem;
@@ -43,8 +46,7 @@
   }
   
   .fighter-elo-card {
-    flex: 1 1 200px; /* flex-grow, flex-shrink, flex-basis */
-    min-width: 150px; /* prevent it from shrinking too small */
+    flex: 1 1 200px; 
     max-width: 100%;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -168,3 +170,20 @@
     margin-top: 2rem;
     color: #fff;
   }
+
+
+  @media (max-width: 754px) {
+  
+    .fighter-name-record {
+      text-align: center;
+    }
+  } 
+
+  @media (max-width: 400px) {
+  
+    .fighter-content {
+      padding: 8rem 1rem 8rem 1rem;
+    }
+
+  }
+
