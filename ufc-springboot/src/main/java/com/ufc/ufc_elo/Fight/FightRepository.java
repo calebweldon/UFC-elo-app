@@ -1,5 +1,6 @@
-package com.ufc.ufc_elo;
+package com.ufc.ufc_elo.Fight;
 
+import com.ufc.ufc_elo.FightDetailsDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

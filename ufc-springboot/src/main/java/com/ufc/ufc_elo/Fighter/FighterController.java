@@ -1,4 +1,4 @@
-package com.ufc.ufc_elo;
+package com.ufc.ufc_elo.Fighter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

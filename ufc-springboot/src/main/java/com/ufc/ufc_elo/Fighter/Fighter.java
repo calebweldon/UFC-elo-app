@@ -1,4 +1,4 @@
-package com.ufc.ufc_elo;
+package com.ufc.ufc_elo.Fighter;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

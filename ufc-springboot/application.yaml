@@ -1,6 +1,9 @@
+server:
+  port: ${PORT:8080}
+
 spring:
   datasource:
-    url: jdbc:postgresql://${DB_HOST}:${PORT}/ufcelo
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/ufcelo
     username: ${DB_USER}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver

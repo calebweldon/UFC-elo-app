@@ -3,17 +3,17 @@ package com.ufc.ufc_elo;
 import java.time.LocalDate;
 
 public class FightDetailsDTO {
-	private String opponentName;
-	private String event;
-	private LocalDate date;
-	private String result;
-	private Float fighterPreElo;
-	private Float fighterPostElo;
-	private Float opponentElo;
-	private String weightClass;
-	private String method;
-	private Integer round;
-	private String time;
+	public String opponentName;
+	public String event;
+	public LocalDate date;
+	public String result;
+	public Float fighterPreElo;
+	public Float fighterPostElo;
+	public Float opponentElo;
+	public String weightClass;
+	public String method;
+	public Integer round;
+	public String time;
 
 	public FightDetailsDTO(
 			String opponentName,
@@ -39,49 +39,5 @@ public class FightDetailsDTO {
 		this.method = method;
 		this.round = round;
 		this.time = time;
-	}
-
-	public String getOpponentName() {
-		return opponentName;
-	}
-
-	public String getEvent() {
-		return event;
-	}
-
-	public LocalDate getDate() {
-		return date;
-	}
-
-	public String getResult() {
-		return result;
-	}
-
-	public Float getFighterPreElo() {
-		return fighterPreElo;
-	}
-
-	public Float getFighterPostElo() {
-		return fighterPostElo;
-	}
-
-	public Float getOpponentElo() {
-		return opponentElo;
-	}
-
-	public String getWeightClass() {
-		return weightClass;
-	}
-
-	public String getMethod() {
-		return method;
-	}
-
-	public Integer getRound() {
-		return round;
-	}
-
-	public String getTime() {
-		return time;
 	}
 }
