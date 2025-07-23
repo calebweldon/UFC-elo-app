@@ -3,7 +3,7 @@
     background-color: #1f1f1f;
     padding: 1rem;
     border-radius: 8px;
-    color: #ccc;
+    color: var(--text-light);
 
     max-width: 100%;
     overflow-x: auto;
@@ -24,15 +24,15 @@
   }
   
   .fighter-table th {
-    background-color: #2b2b2b;
+    background-color: var(--bg-color-lighter);
   }
   
   .fighter-table tbody tr:nth-child(even) {
-    background-color: #2b2b2b;
+    background-color: var(--bg-color-lighter);
   }
 
   .fighter-link {
-    color: #ccc;
+    color: var(--text-light);
     text-decoration: none;
   }
   

@@ -1,7 +1,6 @@
 :root {
   --bg-color: #1e1e1e;
-  --bg-color-lighter: #1e1e1e;
-  --white: white;
+  --bg-color-lighter: #2b2b2b;
   --text-light: #ccc;
   --neutral-text-gradient: linear-gradient(to top, #ddd, #999);
   --win-text-gradient: linear-gradient(to top, #81c784, #4caf50);

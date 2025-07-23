@@ -13,12 +13,12 @@
     flex: 1;
     padding: 1.2rem;
     font-size: 1.2rem;
-    color: #ccc;
-    border: 1.2px solid #ccc;
+    color: var(--text-light);
+    border: 1.2px solid var(--text-light);
     border-right: none;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    background-color: #1e1e1e;
+    background-color: var(--bg-color);
   }
 
   .search-input:focus {
@@ -34,11 +34,11 @@
   .search-button {
     padding: 0.5rem 1rem;
     font-size: 1.6rem;
-    color: #ccc;
-    border: 1.5px solid #ccc;
+    color: var(--text-light);
+    border: 1.5px solid var(--text-light);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    background-color: #1e1e1e;
+    background-color: var(--bg-color);
     cursor: pointer;
   }
   

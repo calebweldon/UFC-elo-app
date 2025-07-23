@@ -10,7 +10,7 @@
   .fighter-elo-card {
     flex: 1 1 200px; 
     max-width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid var(--text-light);
     border-radius: 8px;
     padding: 2rem;
     display: flex;
@@ -38,12 +38,10 @@
     border-radius: 2px;
   }
   
-  /* Win → green underline */
   .elo-heading.win::after {
     background: linear-gradient(to right, transparent, #4caf50 50%, transparent);
   }
   
-  /* Optional: for future expansion */
   .elo-heading.loss::after {
     background: linear-gradient(to right, transparent, #f44336 50%, transparent);
   }

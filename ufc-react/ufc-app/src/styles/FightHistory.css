@@ -3,7 +3,7 @@
   }
   
   .fight-section h2 {
-    color: #ccc;
+    color: var(--text-light);
     text-align: center;
     padding-bottom: 1rem;
     font-size: clamp(2.2rem, 9vw, 3rem)
@@ -17,9 +17,9 @@
     font-size: clamp(0.8rem, 3vw, 1rem);
     text-align: center;
     padding: 0.5rem 0;
-    color: #ccc;
-    background-color: #2b2b2b;
-    border: 1.2px solid #ccc;
+    color: var(--text-light);
+    background-color: var(--bg-color-lighter);
+    border: 1.2px solid var(--text-light);
     margin-bottom: 1rem;
     border-radius: 4px;
   }

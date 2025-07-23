@@ -5,9 +5,9 @@
   }
   
   .elo-toggle button {
-    background-color: #1e1e1e;
-    color: #ccc;
-    border: 1px solid #ccc;
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    border: 1px solid var(--text-light);
     padding: 0.4rem 1rem;
     cursor: pointer;
     border-radius: 0;

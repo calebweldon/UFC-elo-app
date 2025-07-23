@@ -1,6 +1,6 @@
 .elo-chart-container {
     margin-top: 2rem;
-    background-color: #1e1e1e;
+    background-color: var(--bg-color);
     padding: 1rem 0rem 1rem 0rem;
     border-radius: 8px;
   }
