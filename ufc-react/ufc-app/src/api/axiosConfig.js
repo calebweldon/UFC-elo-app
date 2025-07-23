@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: "http://localhost:8080",
+    baseURL: "https://ufc-springboot-297559815689.us-west1.run.app",
     headers: {"ngrok-skip-browser-warning": "true"}
 });

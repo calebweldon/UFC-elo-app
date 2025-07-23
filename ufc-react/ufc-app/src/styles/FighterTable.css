@@ -4,6 +4,9 @@
     padding: 1rem;
     border-radius: 8px;
     color: #ccc;
+
+    max-width: 100%;
+    overflow-x: auto;
   }
   
   .fighter-table {
@@ -15,7 +18,7 @@
   .fighter-table th,
   .fighter-table td {
     border: 1px solid #444;
-    padding: 0.75rem;
+    padding: 0.5rem;
     text-align: center;
   }
   
@@ -35,4 +38,15 @@
   .fighter-link:hover {
     text-decoration: underline;
     color: #fff;
+  }
+
+  @media (max-width: 410px) {
+  
+    .fighter-table {
+      font-size: 0.8rem;
+    }
+
+    .fighter-table-container {
+      padding: 1rem 0rem 1rem 0rem
+    }
   }
