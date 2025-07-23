@@ -1,7 +1,7 @@
 import React from "react";
-import SearchBar from "./SearchBar";
-import FighterTable from "./FighterTable";
-import Header from "./Header";
+import SearchBar from "../components/SearchBar";
+import FighterTable from "../components/FighterTable";
+import Header from "../components/Header";
 import "../styles/HomePage.css";
 
 const HomePage = () => {

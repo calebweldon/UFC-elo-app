@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import FighterPage from "./components/FighterPage";
-import Header from "./components/Header";
-import PageNotFoundPage from "./components/PageNotFoundPage";
+import HomePage from "./pages/HomePage";
+import FighterPage from "./pages/FighterPage";
+import PageNotFoundPage from "./pages/PageNotFoundPage";
 import ErrorBoundary from "./ErrorBoundary";
 
 

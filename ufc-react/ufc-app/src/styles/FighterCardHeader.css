@@ -1,0 +1,17 @@
+.fighter-name-record {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1rem
+  }
+  
+  .fighter-name-record h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0.5rem 0rem 0.0rem 0rem;
+    color: #fff;
+  }
+  
+  .fighter-name-record p {
+    font-size: 1.1rem;
+    color: #ccc;
+  }

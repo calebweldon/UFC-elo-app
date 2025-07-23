@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../api/axiosConfig";
-import EloChart from "./EloChart";
-import FightHistory from "./FightHistory";
-import Header from "./Header";
+import EloChart from "../components/EloChart";
+import FightHistory from "../components/FightHistory";
+import Header from "../components/Header";
+import FighterCardHeader from "../components/FighterCardHeader";
+import FighterCardEloSection from "../components/FighterCardEloSection";
 import "../styles/FighterPage.css";
 
 const FighterPage = () => {
@@ -103,43 +105,18 @@ const FighterPage = () => {
         <Header />
         <div className="fighter-content">
           <div className="fighter-card">
-            <div className ="fighter-name-record">
-              <h1>{fighter.name}</h1>
-              <p>{fighter.wins} - {fighter.losses} - {fighter.draws} ({fighter.ncs} NC)</p>
-            </div>
-            <div className="fighter-elo">
-            <div className="fighter-elo-card">
-            <h3 className={`elo-heading ${lastFight?.result === "win" ? "win" : ""}`}>
-              Current Elo
-            </h3>
-              <div className="elo-number-wrapper">
-                <div className="elo-value-line">
-                  <p>{fighter.currentElo}</p>
-                </div>
-                <div className="elo-arrow-group">
-                  {renderEloArrow()}
-                  {renderEloChange()}
-                </div>
-              </div>
-            </div>
-
-            <div className="fighter-elo-card">
-            <h3 className={`elo-heading ${lastFight?.result === "win" ? "win" : ""}`}>
-              Peak Elo
-            </h3>
-              <div className="elo-number-wrapper">
-                <div className="elo-value-line">
-                  <p>{fighter.peakElo}</p>
-                </div>
-              </div>
-            </div>
-            </div>
-
+            <FighterCardHeader {...fighter} />
+            <FighterCardEloSection
+              currentElo={fighter.currentElo}
+              peakElo={fighter.peakElo}
+              lastFight={lastFight}
+              eloChange={eloChange}
+              renderEloArrow={renderEloArrow}
+              renderEloChange={renderEloChange}
+            />
             <EloChart eloHistory={eloHistory} eloChange={eloChange} />
           </div>
-
-
-          {fights && <FightHistory fights={fights} />}
+          <FightHistory fights={fights} />
         </div>
       </div>
     );
