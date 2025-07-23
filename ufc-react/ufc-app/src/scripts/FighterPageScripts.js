@@ -64,7 +64,6 @@ export const renderEloChange = (lastFight, eloChange) => {
     symbol = "";
     cls = "elo-change down";
   } else {
-    // draw or nc
     symbol = "";
     cls = "elo-change neutral";
     return <span className={cls}>({symbol})</span>;
