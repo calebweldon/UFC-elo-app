@@ -31,7 +31,7 @@
   </a>
   <p><i>Click the link above to be redirected to the website</i></p>
   
-  <p>The UFC meets the elo ranking system (popularized by chess). This project combines two of my interests into cloud-deployed web app.</p>
+  <p>The UFC meets the elo ranking system (popularized by chess). This project combines two of my interests into a cloud-deployed web app.</p>
 </div>
 <hr>
 
