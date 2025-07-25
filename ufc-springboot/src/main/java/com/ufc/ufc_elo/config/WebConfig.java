@@ -14,7 +14,7 @@ public class WebConfig {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-						.allowedOrigins("http://localhost:3000", "https://ufc-react-297559815689.us-west1.run.app")
+						.allowedOrigins("http://localhost:3000", "https://ufc-elo-app.web.app")
 						.allowedMethods("GET")
 						.allowedHeaders("*");
 			}
