@@ -35,9 +35,9 @@
 </div>
 <hr>
 
-This project consists of 5 parts:
+The project consists of 5 parts:
 
-1. Spring Boot backend service  
+1. Springboot backend service  
 2. React web application  
 3. Webscraper  
 4. Elo engine  
