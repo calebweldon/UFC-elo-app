@@ -26,19 +26,25 @@
 ## About The Project
 
 <div align="center">
-<!--   <img src="https://github.com/user-attachments/assets/b62f6c94-bbaf-46ae-b0f8-20dd5111f260" alt="Logo" width="500" height="500"> -->
-  
-  <p>
-    [PLACEHODLER]
+  <a href="https://ufc-elo-app.web.app/">
+    <img src="https://github.com/user-attachments/assets/d8617a99-dc99-49d2-84fe-211ffd0a0751" alt="Logo" width="880" height="880">
+  </a>
+  <p><i>Click the link above to be redirected to the website</i></p>
+
+  <p style="max-width: 600px; margin-top: 1em;">
+    The UFC meets the Elo ranking system (popularized by chess). This project combines two of my biggest interests into a cloud-deployed web app.
   </p>
-  
-  <p>Webscraper</p>
-  <p>Engine</p>
-  <p>Springboot backend application</p>
-  <p>React web application</p>
-  
 </div>
 
+<div style="margin-top: 2em;">
+  <p><strong>This project consists of four main parts:</strong></p>
+  <ol style="line-height: 1.6;">
+    <li>Spring Boot backend service</li>
+    <li>React web application</li>
+    <li>Web scraper</li>
+    <li>Elo engine</li>
+  </ol>
+</div>
 
 
 <!-- BUILT WITH -->
