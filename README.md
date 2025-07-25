@@ -155,8 +155,7 @@ python engine.py
 1. Open the project in IntelliJ (or your preferred IDE).  
 2. Configure the project SDK to **Java 21**  
    > IntelliJ: `File` → `Project Structure` → `Project` → select **Project SDK: 21**  
-3. Create a .env file and fill in the following values;
-4. Create a `.env` file in the root directory and fill in the following values:
+3. Create a `.env` file in the root directory and fill in the following values:
 ```env
 DB_HOST=ufc-elo-db.cxscs82g44f7.us-east-2.rds.amazonaws.com
 DB_USER=readonly_user
