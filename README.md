@@ -11,9 +11,9 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#dependencies">Installation</a></li>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#dependencies">Installation</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
@@ -68,24 +68,6 @@
 ## Getting Started
 
 Follow the steps below to set up and run the project locally on your machine.
-
-### Dependencies
-
-#### Backend (Spring Boot)
-* Java 21
-* PostgreSQL JDBC Driver
-* dotenv-java (env var loading)
-
-#### Frontend (React)
-* React Router DOM 7.7
-* Axios 1.1
-* Recharts 3.1
-* Bootstrap 5.3
-
-#### Scraper & Elo Engine (Python)
-* `beautifulsoup4`
-* `pandas` 
-* `numpy`
 
 ### Prerequisites
 
@@ -234,6 +216,24 @@ npm start
 The app will be available at `http://localhost:3000`.
 
 > ✅ You should now see the frontend calling your local backend running on port 8080
+
+### Dependencies
+
+#### Backend (Spring Boot)
+* Java 21
+* PostgreSQL JDBC Driver
+* dotenv-java (env var loading)
+
+#### Frontend (React)
+* React Router DOM 7.7
+* Axios 1.1
+* Recharts 3.1
+* Bootstrap 5.3
+
+#### Scraper & Elo Engine (Python)
+* `beautifulsoup4`
+* `pandas` 
+* `numpy`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
