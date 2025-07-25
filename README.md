@@ -34,20 +34,18 @@
   <p>The UFC meets the elo ranking system (popularized by chess). This project combines two of my biggest interests into cloud-deployed web app.</p>
 </div>
 <hr>
-<p>This project consists of 5 parts:</p>
-<ol>
-  <li>Springboot backend service</li>
-  <li>React web application</li>
-  <li>Webscraper</li>
-  <li>Elo engine</li>
-  <li>Cloud infrastructure
-    <ul>
-      <li>AWS RDS hosts Postgres DB</li>
-      <li>Google Cloud Run hosts backend service</li>
-      <li>Firebase hosts web application</li>
-    </ul>
-  </li>
-</ol>
+
+This project consists of 5 parts:
+
+1. Spring Boot backend service  
+2. React web application  
+3. Webscraper  
+4. Elo engine  
+5. Cloud infrastructure
+   
+   > - AWS RDS hosts Postgres DB  
+   > - Google Cloud Run hosts backend service  
+   > - Firebase hosts web application
 
 
 <!-- BUILT WITH -->
